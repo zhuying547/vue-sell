@@ -1,0 +1,10 @@
+.border-1px
+  &::after
+    transform scaleY(1)
+
+  @media (min-resolution: 2dppx)
+    &::after
+      transform scaleY(0.5)
+  @media (min-resolution: 3dppx)
+    &::after
+      transform scaleY(0.33)

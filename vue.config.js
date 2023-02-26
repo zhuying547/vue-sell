@@ -1,8 +1,16 @@
 const { defineConfig } = require('@vue/cli-service')
 const appData = require('./data.json')
-
+const path = require('path')
 module.exports = defineConfig({
   transpileDependencies: true,
+  configureWebpack: {
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, './src/components'),
+        common: path.resolve(__dirname, './src/common'),
+      },
+    },
+  },
   devServer: {
     setupMiddlewares: (middlewares, devServer) => {
       if (!devServer) {
