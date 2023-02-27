@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>商品goods</div>
 </template>
 
 <script>

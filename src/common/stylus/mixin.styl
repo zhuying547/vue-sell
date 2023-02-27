@@ -7,3 +7,8 @@ border-1px($color)
     width 100%
     border-bottom 1px solid $color
     content ''
+
+bg-image($url)
+  background-image url($url + '@2x.png')
+  @media (min-resolution: 3dppx)
+    background-image url($url + '@3x.png')

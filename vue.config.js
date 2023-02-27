@@ -3,6 +3,15 @@ const appData = require('./data.json')
 const path = require('path')
 module.exports = defineConfig({
   transpileDependencies: true,
+  css: {
+    loaderOptions: {
+      stylus: {
+        stylusOptions: {
+          resolveURL: false,
+        },
+      },
+    },
+  },
   configureWebpack: {
     resolve: {
       alias: {

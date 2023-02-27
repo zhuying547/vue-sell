@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="header">iamheader</div>
+    <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
         <router-link to="/goods">商品</router-link>
@@ -16,7 +16,24 @@
   </div>
 </template>
 <script>
-export default {}
+import VHeader from 'components/header/v-header.vue'
+
+const ERR_OK = 0
+export default {
+  components: { VHeader },
+  data() {
+    return {
+      seller: {},
+    }
+  },
+  created() {
+    this.$http.get('/api/seller').then((res) => {
+      if (res.data.errno === ERR_OK) {
+        this.seller = res.data.data
+      }
+    })
+  },
+}
 </script>
 <style lang="stylus">
 @import './common/stylus/mixin'

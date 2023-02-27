@@ -37,3 +37,7 @@ npm run lint
 通过 devServer 的配置完成
 
 > 统一放在 `/api` 请求路径下
+
+### stylus-loader
+
+在`<style lang="stylus">`中导入 mixin，导入图片的路径是相对 mixin 所在目录，为什么？
