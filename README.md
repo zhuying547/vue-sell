@@ -31,6 +31,7 @@ npm run lint
 需要借助 prettier-plugin-stylus 完成对 stylus 的格式化。
 
 - 不支持 @font-face 难绷！
+- 不能折叠样式，以后必不可能用 stylus
 
 ### 数据 Mock
 

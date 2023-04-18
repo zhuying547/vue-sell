@@ -30,6 +30,7 @@
     <div class="background">
       <img :src="seller.avatar" width="100%" height="100%" />
     </div>
+    <div class="detail" v-show="detailShow"></div>
   </div>
 </template>
 
@@ -41,7 +42,9 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      detailShow: false,
+    }
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
@@ -54,6 +57,7 @@ export default {
 
 .header
   position relative
+  overflow hidden
   color #fff
   .content-wrapper
     position relative
@@ -149,7 +153,6 @@ export default {
       font-weight 200
   .background
     z-index -1
-    overflow hidden
     position absolute
     left 0
     top 0

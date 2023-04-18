@@ -21,11 +21,7 @@ module.exports = defineConfig({
     },
   },
   devServer: {
-    setupMiddlewares: (middlewares, devServer) => {
-      if (!devServer) {
-        throw new Error('webpack-dev-server is not defined')
-      }
-
+    onBeforeSetupMiddleware: (devServer) => {
       devServer.app.get('/api/seller', (req, res) => {
         res.json({
           errno: 0,
@@ -44,7 +40,6 @@ module.exports = defineConfig({
           data: appData.ratings,
         })
       })
-      return middlewares
     },
   },
 })
